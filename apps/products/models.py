@@ -8,7 +8,7 @@ from apps.base.models import BaseModel
 class Ubicacion(BaseModel):
 
     # TODO> Define Fields Here
-    ubicacion = models.CharField('Ubicacion', max_length=50, blank=False, null=True, unique=True)
+    ubicacion = models.CharField('Ubicacion', max_length=50, blank=False, null=True)
     historical = HistoricalRecords()
 
     @property
@@ -29,7 +29,7 @@ class Ubicacion(BaseModel):
 class Descripcion(BaseModel):
 
     # TODO> Define Fields Here
-    descripcion = models.CharField('Departamento', max_length=50, blank=False, null=True, unique=True)
+    descripcion = models.CharField('Descripcion', max_length=50, blank=False, null=True)
     historical = HistoricalRecords()
 
     @property
@@ -50,7 +50,7 @@ class Descripcion(BaseModel):
 class Fotos(BaseModel):
 
     # TODO> Define Fields Here
-    fotos = models.CharField('Despartamento1', max_length=50, blank=False, null=True, unique=True)
+    fotos = models.ImageField(upload_to='propiedades', null=True)
     historical = HistoricalRecords()
 
     @property
@@ -73,6 +73,8 @@ class Propiedades(BaseModel):
 
     name = models.CharField('Nombre De La Propiedad', max_length=150, unique=True, blank=False, null=True)
 
+    ubicacion = models.ForeignKey(Ubicacion, on_delete=models.CASCADE, verbose_name='Ubicacion', default='0')
+    descripcion = models.ForeignKey(Descripcion, on_delete=models.CASCADE, verbose_name='Descripcion', default='0')
 
     @property
     def _history_user(self):

@@ -6,4 +6,5 @@ from apps.products.models import *
 admin.site.register(Ubicacion)
 admin.site.register(Descripcion)
 admin.site.register(Fotos)
+admin.site.register(Propiedades)
 
