@@ -1,6 +1,5 @@
 from apps.base.api import GeneralListAPIView
-from apps.products.api.serializers.product_serializer import ViajeSerializer
+from apps.products.api.serializers.product_serializer import PropiedadSerializer
 
-class ViajeListAPIView(GeneralListAPIView):
-    serializer_class = ViajeSerializer
-    
+class PropiedadListAPIView(GeneralListAPIView):
+    serializer_class = PropiedadSerializer    

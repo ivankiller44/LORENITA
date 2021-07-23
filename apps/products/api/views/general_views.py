@@ -1,20 +1,11 @@
 from apps.base.api import GeneralListAPIView
-from apps.products.api.serializers.general_serializers import OrigenSerializer, DestinoSerializer, TipoDeBusSerializer, NumeroDeBusSerializer, FechaDeSalidaSerializer, HoraDeSalidaSerializer
+from apps.products.api.serializers.general_serializers import UbicacionSerializer, DescripcionSerializer, FotosSerializer
 
-class OrigenListAPIView(GeneralListAPIView):
-    serializer_class = OrigenSerializer
+class UbicacionListAPIView(GeneralListAPIView):
+    serializer_class = UbicacionSerializer
 
-class DestinoListAPIView(GeneralListAPIView):
-    serializer_class = DestinoSerializer
+class DescripcionListAPIView(GeneralListAPIView):
+    serializer_class = DescripcionSerializer
 
-class TipoDeBusListAPIView(GeneralListAPIView):
-    serializer_class = TipoDeBusSerializer
-
-class NumeroDeBusListAPIView(GeneralListAPIView):
-    serializer_class = NumeroDeBusSerializer
-
-class FechaDeSalidaListAPIView(GeneralListAPIView):
-    serializer_class = FechaDeSalidaSerializer
-
-class HoraDeSalidaListAPIView(GeneralListAPIView):
-    serializer_class = HoraDeSalidaSerializer
+class FotosListAPIView(GeneralListAPIView):
+    serializer_class = FotosSerializer
