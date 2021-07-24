@@ -1,0 +1,26 @@
+<form (submit)="onSubmit()" [formGroup]="form">
+    <h4>Añadir Nombre</h4>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre de Propiedad*</mat-label>
+        <input formControlName="nombre" matInput />
+    </mat-form-field>
+
+    <h4>Añadir Descripción</h4>
+
+    <app-input-markdown 
+    [contenidoMarkdown]="modelo?.descripcion"
+    [placeHolderTextarea]="'Descripción'" 
+    (changeMarkdown)="cambioMarkdown($event)"></app-input-markdown>
+
+    <h4>Seleccionar Imagen</h4>
+
+    <app-input-img [urlImagenActual]="modelo?.foto" (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
+
+    <div>
+        <button mat-flat-button color="primary" [disabled]="form.invalid">
+            Guardar Cambios
+        </button>
+        <a mat-stroked-button routerLink="casas"> Cancelar </a>
+    </div>
+</form>
