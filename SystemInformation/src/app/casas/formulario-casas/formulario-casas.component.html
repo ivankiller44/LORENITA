@@ -13,6 +13,27 @@
     [placeHolderTextarea]="'Descripción'" 
     (changeMarkdown)="cambioMarkdown($event)"></app-input-markdown>
 
+    <h4>Añadir Precio</h4>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Precio de Propiedad*</mat-label>
+        <input formControlName="precio" matInput />
+    </mat-form-field>
+
+    <h4>Añadir Dimensión</h4>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Dimensión de Propiedad*</mat-label>
+        <input formControlName="dimensiones" matInput />
+    </mat-form-field>
+
+    <h4>Añadir Ubicación</h4>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Ubicación de Propiedad*</mat-label>
+        <input formControlName="ubicacion" matInput />
+    </mat-form-field>
+
     <h4>Seleccionar Imagen</h4>
 
     <app-input-img [urlImagenActual]="modelo?.foto" (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>

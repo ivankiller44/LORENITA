@@ -19,7 +19,9 @@ import { EditarTerrenosComponent } from './terrenos/editar-terrenos/editar-terre
 import { EditarCasasComponent } from './casas/editar-casas/editar-casas.component';
 import { InputImgComponent } from './utilidades/input-img/input-img.component';
 import { FormularioCasasComponent } from './casas/formulario-casas/formulario-casas.component';
-import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component'
+import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
+import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
+import { DetallesCasasComponent } from './casas/detalles-casas/detalles-casas.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdo
     EditarCasasComponent,
     InputImgComponent,
     FormularioCasasComponent,
-    InputMarkdownComponent
+    InputMarkdownComponent,
+    ListadoGenericoComponent,
+    DetallesCasasComponent
   ],
   imports: [
     BrowserModule,

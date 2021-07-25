@@ -23,13 +23,18 @@ export class FormularioCasasComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       nombre: '',
-      foto: '',
-      descripcion: ''
+      descripcion: '',
+      precio: '',
+      dimensiones: '',
+      ubicacion: '',
+      contacto: '',
+      foto: ''
     })
 
     if (this.modelo !== undefined){
       this.form.patchValue(this.modelo);
     }
+
   }
 
   archivoSeleccionado(file){

@@ -20,11 +20,10 @@ export class AgregarCasasComponent implements OnInit {
   }
 
   guardarCambios(casa: casaCreacionDTO){
-    this.casasService.crear(casa).subscribe(() => {
+    /*this.casasService.crear(casa).subscribe(() => {
       this.router.navigate(['/casas']);
-    }, error => console.error(error));
-    )
-    
+    }, error => console.error(error));*/
+    console.log(casa);
   }
 
 }

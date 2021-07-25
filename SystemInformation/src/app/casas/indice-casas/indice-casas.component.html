@@ -1,3 +1,64 @@
 <h2>Casas</h2>
 
 <button mat-flat-button color="primary" routerLink="/casas/agregar">Agregar Casa</button>
+
+<!--<app-listado-generico [listado]="casasMuestra">
+    <ng-container vacio>
+        <div>No hay datos de <b>Casas</b> actualmente</div>
+    </ng-container>
+    <ng-container contenido>
+        <div class="casas-contenedor">
+            <div *ngFor="let casa of casasMuestra; let index = index" class="casa-contenedor">
+                <div>Casa {{ index + 1}}:
+                    {{casa.id}}
+                    <button style="margin-left: 1rem;" (click)="remover(index)">Eliminar</button>
+                </div>
+                <div>
+                    {{casa.nombre}}
+                </div>
+                <div>
+                    {{casa.descripcion}}
+                </div>
+                <div>
+                    {{casa.precio | currency}}
+                </div>
+                <div>
+                    {{casa.dimensiones}}
+                </div>
+                <div>
+                    {{casa.ubicacion}}
+                </div>
+                <div>
+                    {{casa.contacto}}
+                </div>
+                <div>
+                    <img [src]="casa.foto" alt="ImagenCasa">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</app-listado-generico>-->
+
+<app-listado-generico [listado]="listCasas">
+    <ng-container vacio>
+        <div>No hay datos de <b>Casas</b> actualmente</div>
+    </ng-container>
+    <ng-container contenido>
+        <mat-card *ngFor="let casa of listCasas" class="tarjetaPresentacion">
+            <mat-grid-list cols="2" rowHeight="65px">
+                <mat-grid-tile [colspan]="2" [rowspan]="5">
+                    <img mat-card-image class="imagenCasa" [src]="casa.foto" alt="ImagenCasa" >
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2" [rowspan]="1" class="datosCasa">
+                    <span class="visName"><b>{{casa.nombre}}</b></span>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1" class="datosCasa">
+                    <span class="visPrice">{{casa.precio | currency}}</span>  
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1" class="datosCasa">
+                    <a routerLink="/casas/detalles/{{casa.id}}" class="visInfor">Ver Detalles</a>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+    </ng-container>
+</app-listado-generico>

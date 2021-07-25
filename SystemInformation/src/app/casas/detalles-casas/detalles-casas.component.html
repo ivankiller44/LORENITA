@@ -1,0 +1,37 @@
+<h2>Detalles de la Casa</h2>
+
+<app-listado-generico [listado]="listCasas">
+    <ng-container vacio>
+        <div>No hay datos de <b>Casas</b> actualmente</div>
+    </ng-container>
+    <ng-container contenido>
+        <mat-card *ngFor="let casa of listCasas" class="tarjetaPresentacion">
+                <mat-grid-list cols="4" rowHeight="65px">
+                    <mat-grid-tile [colspan]="2" [rowspan]="5">
+                        <img mat-card-image class="imagenCasa" [src]="casa.foto" alt="ImagenCasa" >
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'aliceblue'">
+                        <span class="visName">Nombre: <b>{{casa.nombre}}</b></span>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'aliceblue'">
+                        <span class="visPrice">Precio: {{casa.precio | currency}}</span>  
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'aliceblue'">
+                        <span class="visPrice">Descripcion: {{casa.descripcion}}</span>  
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'aliceblue'">
+                        <span class="visPrice">Dimensiones: {{casa.dimensiones}}</span>  
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'aliceblue'">
+                        <span class="visPrice">Ubicacion: {{casa.ubicacion}}</span>  
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'aliceblue'">
+                        <span class="visPrice">Contacto: {{casa.contacto}}</span>  
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                        <button mat-flat-button color="primary" routerLink="/casas" class="visInfor">Volver</button>
+                    </mat-grid-tile>
+                </mat-grid-list>        
+        </mat-card>
+    </ng-container>
+</app-listado-generico>
